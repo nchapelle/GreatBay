@@ -18,19 +18,20 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId + "\n");
+  mainMenu();
 });
 
 
-var mainMeun = () => {
+var mainMenu = () => {
   inquirer.prompt([{
       type: "input",
       message: "Enter User name.",
-      namw: "userName"
+      name: "userName"
     },
     {
       type: "password",
       message: "Enter user password.",
-      mask: "8",
+      mask: "*",
       name: "password"
     },
     {
@@ -52,3 +53,19 @@ var mainMeun = () => {
   })
 
 }
+
+// function postBid(){
+//     var query = connection.query(
+//         "INSERT INTO Auction SET ?",
+//         {
+//           forSale: "",
+//           price: 3.0,
+//           quantity: 50
+//         },
+//         function(err, res) {
+//           if (err) throw err;
+//           console.log(res.affectedRows + " product inserted!\n");
+//           // Call updateProduct AFTER the INSERT completes
+//           updateProduct();
+//         }
+// }

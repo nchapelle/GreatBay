@@ -4,15 +4,15 @@ USE greatbay_db;
 
 CREATE TABLE Auction (
   id INT NOT NULL AUTO_INCREMENT,
-  Post an item INT NULL,
-  Bid an item INT NULL,
+  ForSale VARCHAR(45) INT NULL,
+  category VARCHAR(45) NOT NULL,
+  startingPrice INTEGER(10) INT default 0,
+  highestBid INTEGER(10) INT default 0,
   PRIMARY KEY (id)
 );
 
-INSERT INTO Auction (Post)
-VALUES (50);
+INSERT INTO Auction (ForSale, category, startingPrice, highestBid)
+VALUES ("car", "item", 100, 5000);
 
-INSERT INTO Song (Bid)
-VALUES (50);
 
 
